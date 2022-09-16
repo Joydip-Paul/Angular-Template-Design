@@ -1,0 +1,12 @@
+<div class="go-top" (click)="gotoTop()" [ngClass] = "isShow? 'goTopOn':'goTopOff'">
+    <button><i class="fas fa-angle-up"></i></button>
+</div>
+
+<div class="load" *ngIf = isLoading>
+    <div class="load-one"></div>
+    <div class="load-two"></div>
+    <div class="load-three"></div>
+</div>
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

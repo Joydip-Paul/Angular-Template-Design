@@ -1,0 +1,169 @@
+@use 'variables' as abstract;
+@use 'mixins' as *;
+
+.review-slider {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+
+    &_img-frame {
+        flex: 0 0 auto;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &_details {
+        margin-left: 50px;
+
+        p {
+            max-width: 800px;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 20px;
+            padding-left: 60px;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateX(-50%);
+                left: 20px;
+                height: 2px;
+                width: 40px;
+                background-color: abstract.$primaryColor;
+            }
+        }
+    }
+    @include respond-to(max-small){
+        flex-direction: column;
+        text-align: center;
+        &_details {
+            margin-left: 0;
+    
+            p {
+                padding-top: 30px;
+                padding-bottom: 1.5rem;
+                max-width: 90%;
+                margin: 0 auto;
+            }
+    
+            h3 {
+                padding-left: .5rem;
+                &::before {
+                    left: 32%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}
+
+.review-section {
+    background: linear-gradient(to bottom,
+            rgba(246, 246, 246, 0.771),
+            rgba(190, 190, 190, 0.912)), url('../../../../../assets/images/parallax-bg.jpg');
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    @include respond-to (max-small){
+        margin-top: 30px;
+    }
+
+    .each-review {
+        display: flex;
+        padding: 20px 0;
+
+        &_img {
+            flex: 0 0 auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &:hover{
+                border: 2px dotted #6E6E6E;
+            }
+        }
+
+        &_details {
+            margin-left: 1.5rem;
+
+            h3 {
+                font-size: 20px;
+                color: #333333;
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+
+            h4 {
+                font-size: 14px;
+                position: relative;
+                font-weight: 400;
+                color: #3e3e3e;
+                padding-bottom: 4px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    height: 2px;
+                    width: 60px;
+                    background-color: abstract.$primaryColor;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                color: #727272;
+                max-width: 400px;
+                margin-top: 20px;
+            }
+        }
+        @include respond-to(max-small){
+            padding: 10px 0;
+            flex-direction: column;
+            text-align: center;
+            &_img{
+                margin: 16px auto;
+                // border-radius: 0;
+                width: 40%;
+                height: 40%;
+            }
+            &_details{
+                margin-left: 0;
+                h4 {
+                    margin-bottom: 20px;
+                    &::after {
+                        content: "";
+                        background-color: abstract.$primaryColor;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+                p{
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

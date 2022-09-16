@@ -1,0 +1,19 @@
+<section class="pt-100 pb-100">
+    <div class="container">
+        <button type="button" (click)="toggle()">open</button>
+        <div class="dashboard-section">
+            <div class="sidenav" [@openClose]="isOpen ? 'open' : 'closed'">
+                <ul>
+                    <li>Item</li>
+                    <li>Item</li>
+                    <li>Item</li>
+                    <li>Item</li>
+                    <li>Item</li>
+                </ul>
+            </div>
+            <div class="dashboard-section_body" [@openClose]="isOpen ? 'ml' : 'ml2'">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel veniam alias ratione, eveniet esse maxime distinctio quis cumque et repudiandae nobis. Laudantium adipisci voluptates ipsum illum repellendus labore maiores ipsam beatae tempore eius praesentium, ex nemo aut molestias magni laboriosam officiis voluptatibus quibusdam quae asperiores expedita! Tenetur aspernatur mollitia voluptatum cum eius explicabo iusto in doloremque, ea assumenda optio, velit cupiditate tempora nihil laborum, dolore eum impedit reprehenderit cumque obcaecati aperiam animi est error. Quam quisquam numquam architecto id aspernatur quia vel, voluptatem dolore voluptates nemo dolorum, inventore nihil distinctio provident cumque iste, error sapiente odio nulla blanditiis neque! Consectetur minus atque dolore suscipit, accusamus beatae provident odio obcaecati magni harum, libero quo autem. Debitis atque eum facere ut magnam reprehenderit culpa similique asperiores est repellat iusto incidunt ipsa voluptates repellendus quibusdam, error perspiciatis impedit iste eos dolor mollitia pariatur neque dolore porro? Adipisci quas fuga sint expedita distinctio doloremque, ipsum numquam recusandae totam alias. Excepturi dicta commodi quasi, quaerat doloremque, beatae labore, sit saepe unde consequuntur minima voluptatem at tempora reprehenderit odio minus temporibus asperiores. In, harum tenetur. Excepturi neque tempora vel quos? Rerum alias nesciunt facilis libero doloribus hic amet consequuntur perspiciatis laborum distinctio eaque, praesentium officiis maxime?</p>
+            </div>
+        </div>
+    </div>
+</section>

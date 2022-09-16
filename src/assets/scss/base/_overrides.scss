@@ -1,0 +1,115 @@
+@use 'variables' as abstract;
+@use 'mixins' as *;
+
+h1,h2,h3,h4,h5,h6{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.owl-nav-1 {
+
+    .owl-carousel .owl-nav .owl-next,
+    .owl-carousel .owl-nav .owl-prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 30px;
+        width: 30px;
+        background: none !important;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        border-radius: 50%;
+        overflow: hidden;
+        color: #333333;
+
+        &:hover {
+            color: #333333;
+        }
+
+        @include respond-to(max-medium) {
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%, -50%);
+            margin-top: 30px;
+            background: #CECECE !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+    }
+
+    .owl-carousel .owl-nav .owl-prev {
+        left: 0;
+
+        @include respond-to(max-medium) {
+            left: 45%;
+        }
+    }
+
+    .owl-carousel .owl-nav .owl-next {
+        right: 0;
+
+        @include respond-to(max-medium) {
+            left: 55%;
+        }
+    }
+}
+
+.custom-dots-1 {
+    .owl-theme .owl-dots .owl-dot {
+        span {
+            width: 10px;
+            height: 10px;
+            border-radius: 0 !important;
+            margin-top: 16px;
+        }
+    }
+}
+
+.hero-section {
+    position: relative;
+    // overflow: hidden;
+    .owl-theme {
+        // padding-bottom: 30px;
+        .owl-dot {
+            span {
+                background: #fff !important;
+            }
+
+            &.active {
+                span {
+                    background: abstract.$primaryColor  !important;
+                }
+            }
+        }
+
+        .owl-dots {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 30px;
+            // bottom: -100px;
+            // @include respond-to(max-small) {
+            //     bottom: -20px;
+            // }
+
+            span {
+                width: 100px !important;
+                height: 6px;
+                border-radius: 0 !important;
+
+            }
+
+            @include respond-to(max-medium) {
+                // padding-top: 100px;
+
+                span {
+                    height: 4px !important;
+                    width: 30px !important;
+                }
+            }
+        }
+    }
+}

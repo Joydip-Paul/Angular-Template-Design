@@ -1,0 +1,30 @@
+$breakpoints: (
+    'max-xs-small': (max-width: 485px),
+    'xs-small': (min-width: 486px),
+    'max-small': (max-width: 767px),
+    'small': (min-width: 768px),
+    'max-medium': (max-width: 991px),
+    'medium': (min-width: 992px),
+    'large': (min-width: 1200px),
+    'max-large': (max-width: 1200px),
+    'larger': (max-width: 1600px),
+    'x-large': (min-width: 1400px)) !default;
+// $breakpoints: (
+//     'small': (max-width: 400),
+//     'medium': (max-width: 768),
+//     'tab': (max-width: 992),
+//     'large': (max-width: 1200),
+//     'x-large': (max-width: 1400)) !default;
+$primaryColor: #f38181;
+$secondaryColor: #95e1d3;
+$grayColor: #909090;
+$lightGray: #eee;
+$danger: #c21d15;
+$success: #49a133;
+$textColor: #333333;
+$basement: 16;
+$leading-base: 1.4;
+$line-height-base: round($basement * $leading-base
+); // 16 * 1.4
+$shadow: #eee 0px 2px 20px;
+$baseline: $line-height-base * 1px;

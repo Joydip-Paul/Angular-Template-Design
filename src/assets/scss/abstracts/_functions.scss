@@ -1,0 +1,11 @@
+@use "./variables" as *;
+
+@function calculateRem($size) {
+    $remSize: calc($size / $basement);
+    @return $remSize * 1rem;
+}
+
+@function calculateEm($size){
+    $emSize: calc($size / $basement);
+    @return $emSize * 1em;
+}

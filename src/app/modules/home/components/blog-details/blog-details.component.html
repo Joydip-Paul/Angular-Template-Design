@@ -1,0 +1,120 @@
+<div class="load" *ngIf = isLoading>
+    <div class="load-one"></div>
+    <div class="load-two"></div>
+    <div class="load-three"></div>
+</div>
+<section class="banner">
+    <div class="banner_details">
+        <h1>{{bannerTitle}}</h1>
+        <div class="banner_details-path">
+            <a routerLink={{path1}}>{{path1Name}}</a>
+            <span> / </span>
+            <a>{{bannerTitle}}</a>
+        </div>
+    </div>
+</section>
+
+<section class="blog-section pt-100 pb-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <div class="blog-details-left" *ngFor="let item of blogPost | slice:0:3 | filter:searchText">
+                    <div class="blog-details-left_single-blog">
+                        <!-- <p>Today: {{now}}</p> -->
+                        <p class="date">Post Date: {{curDate | date:'dd-MM-yyyy'}}</p>
+                        <div class="blog-img">
+                            <img src="{{item.img}}" alt="">
+                        </div>
+                        <h2>{{item.title}}</h2>
+                        <ul>
+                            <li><i class="fas fa-user"></i> <span>Admin</span></li>
+                            <li><i class="fas fa-clock"></i> <span>May 4, 20222</span></li>
+                            <li><i class="fas fa-file"></i> <span>Tips & Tricks</span></li>
+                            <li><i class="fas fa-comment"></i> <span>0 Comments</span></li>
+                        </ul>
+                        <p>{{item.des}}</p>
+                        <div class="continue-btn">
+                            <a (click)="blogModal()">Continue Reading</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <ul>
+                        <!-- <li><i class="fas fa-chevron-left"></i></li> -->
+                        <li><a>1</a></li>
+                        <li><a>2</a></li>
+                        <li><a>3</a></li>
+                        <li><a>4</a></li>
+                        <li><i class="fas fa-chevron-right"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog-details-right">
+                    <div class="search-btn">
+                        <input type="text" class="form-control" placeholder="Type keyword here"
+                            [(ngModel)]="searchText">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="blog-card recent-post">
+                        <h3>Recent posts</h3>
+                        <ul *ngFor="let item of recentPost | filter:searchText">
+                            <li>
+                                <div class="recent-post_img-box">
+                                    <img src="{{item.img}}" alt="">
+                                </div>
+                                <div class="recent-post_details">
+                                    <h4>{{item.title}}</h4>
+                                    <small>{{item.date}}</small>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="blog-card blog-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Register now to get latest updates on promotions & coupons.</p>
+                        <div class="subscribe-area">
+                            <input type="text" placeholder="Type Your Email">
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="blog-card blog-social">
+                        <h3>SOCIAL</h3>
+                        <ul>
+                            <li><a href="#"></a><i class="fab fa-facebook-f"></i></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="blog-card blog-instagram">
+                        <h3>Our Instagram</h3>
+                        <div class="blog-instagram_img-grid">
+                            <div *ngFor="let item of instagramImg">
+                                <div class="blog-instagram_img-grid_img-box">
+                                    <img src="{{item.img}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card blog-popular-tag">
+                        <h3>Popular Tags</h3>
+                        <ul>
+                            <li>Consultation</li>
+                            <li>Envato</li>
+                            <li>HTML/CSS</li>
+                            <li>Marketing</li>
+                            <li>PHP</li>
+                            <li>Psd</li>
+                            <li>Sketch</li>
+                            <li>Technology</li>
+                        </ul>
+                    </div>
+                    <div class="blog-card">
+                        <h3>Comming Soon...</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,166 @@
+<!-- <div class="map">
+    <iframe id="mod-directions-map-passive-iframe" width="600" height="450" frameborder="0"
+        src="https://www.google.com/maps/embed/v1/place?q={arrival}&key=AIzaSyA6-_qrhr9_4yx7AyqUr-ep1tKmP_a3u7A"></iframe>
+    <iframe id="mod-directions-map-active-iframe" width="600" height="450" frameborder="0" style="display: none;"
+        src="https://www.google.com/maps/embed/v1/directions?origin={departure}&destination={arrival}&key=AIzaSyA6-_qrhr9_4yx7AyqUr-ep1tKmP_a3u7A"></iframe>
+</div> -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="mogomap" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Mogo Location</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <iframe id="mod-directions-map-passive-iframe" width="600" height="450" frameborder="0"
+            src="https://www.google.com/maps/embed/v1/place?q={arrival}&key=AIzaSyA6-_qrhr9_4yx7AyqUr-ep1tKmP_a3u7A"></iframe>
+        <iframe id="mod-directions-map-active-iframe" width="600" height="450" frameborder="0" style="display: none;"
+            src="https://www.google.com/maps/embed/v1/directions?origin={departure}&destination={arrival}&key=AIzaSyA6-_qrhr9_4yx7AyqUr-ep1tKmP_a3u7A"></iframe>
+        </div>
+        <div class="modal-footer">
+            <button data-bs-dismiss="modal">close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="map" data-bs-toggle="modal" data-bs-target="#mogomap">
+    <div class="map-content">
+        <div class="map-icon">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h2>OPEN MAP</h2>
+    </div>
+</div>
+<footer class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="footer-col-1">
+                    <div class="logo">
+                        <h2><a href=""><img src="assets/images/footer-logo.png" alt=""></a></h2>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, cumque, error laboriosam unde
+                        officiis temporibus eius repellendus perspiciatis distinctio accusantium, deleniti praesentium
+                        inventore molestiae commodi perferendis nihil quibusdam. Commodi, et!</p>
+                    <h3>15k <span>followers</span></h3>
+                    <div class="follow-us">
+                        <small>Follow us</small>
+                        <ul>
+                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                            <li><a href=""><i class="fab fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                    <form [formGroup]="subscribrForm">
+                        <div class="subscribe-field">
+                            <input type="text" placeholder="Enter email" formControlName="email">
+                            <button (click)="subscribrForm()" [disabled]="subscribrForm.invalid">SUBSCRIBE</button>
+                        </div>
+
+                        <span *ngIf="email.invalid && email.touched" class="text-danger">Email is
+                            required</span>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="footer-col-2">
+                    <h3>BLOGS</h3>
+                    <ul>
+                        <li>
+                            <div class="each-blog">
+                                <div class="img-box">
+                                    <img src="assets/images/blog/blog-3.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                                    <small>jan 9, 2015</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="each-blog">
+                                <div class="img-box">
+                                    <img src="assets/images/blog/blog-2.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                                    <small>jan 9, 2015</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="each-blog">
+                                <div class="img-box">
+                                    <img src="assets/images/blog/blog-6.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                                    <small>jan 9, 2015</small>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="footer-col-3">
+                    <h3>INSTAGRAM</h3>
+                    <div class="img-grid">
+                        <div class="img-box-2">
+                            <img src="assets/images/instagram/instagram-1.jpg" alt="">
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="img-box-2">
+                            <img src="assets/images/instagram/instagram-2.jpg" alt="">
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="img-box-2">
+                            <img src="assets/images/instagram/instagram-3.jpg" alt="">
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="img-box-2">
+                            <img src="assets/images/instagram/instagram-4.jpg" alt="">
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="img-box-2">
+                            <img src="assets/images/instagram/instagram-5.jpg" alt="">
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="img-box-2">
+                            <img src="assets/images/instagram/instagram-6.jpg" alt="">
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="img-box-2">
+                            <img src="assets/images/instagram/instagram-7.jpg" alt="">
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="img-box-2">
+                            <img src="assets/images/instagram/instagram-8.jpg" alt="">
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="img-box-2">
+                            <img src="assets/images/instagram/instagram-9.jpg" alt="">
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="mt-2 more-photos">
+                        <a href="/gallery">View more photos<i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <hr>
+                <p>Copyright &copy; 2022 MoGo</p>
+            </div>
+        </div>
+    </div>
+</footer>

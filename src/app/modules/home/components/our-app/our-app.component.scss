@@ -1,0 +1,208 @@
+@use 'variables' as abstract;
+@use 'mixins' as *;
+
+@include respond-to(max-small) {
+    .title-area {
+        margin-top: 30px;
+    }
+}
+
+.parallax-app {
+    // height: 80vh;
+    width: 100%;
+    object-fit: contain;
+    background-size: cover;
+    background: linear-gradient(to bottom,
+            rgba(225, 225, 225, 0.692),
+            rgba(190, 190, 190, 0.747)), url('../../../../../assets/images/parallax-bg.jpg') fixed;
+    position: relative;
+
+    .app-img {
+        // margin-top: 60px;
+        padding-top: 300px;
+
+        .tab {
+            width: 320px;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .phone {
+            width: 200px;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-left: 160px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    @include respond-to(max-medium) {
+        margin-bottom: 30px;
+
+        .app-img {
+            padding-top: 200px;
+
+            .tab {
+                width: 200px;
+            }
+
+            .phone {
+                width: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-left: 0;
+                top: 80%;
+            }
+        }
+
+        .title-area {
+            margin-top: 30px;
+        }
+    }
+
+    @include respond-to(max-small) {
+        .app-img {
+            padding-top: 220px;
+
+            .tab {
+                width: 200px;
+            }
+
+            .phone {
+                width: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-left: 0;
+                top: 80%;
+            }
+        }
+    }
+
+    @include respond-to(max-xs-small) {
+        .app-img {
+            padding-top: 120px;
+
+            .tab {
+                width: 120px;
+            }
+
+            .phone {
+                width: 60px;
+            }
+        }
+    }
+}
+
+.faq-area {
+    .img-frame {
+        background-image: url('../../../../../assets/images/accordion-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+}
+
+.accordion {
+    .accordion-item {
+        margin-bottom: 1rem;
+        border: 1px solid #eee;
+        padding: .2rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .accordion-header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border: none;
+        background: none;
+        font-weight: 700;
+        padding: 10px 20px;
+        font-size: 18px;
+        position: relative;
+
+        @include respond-to(max-small) {
+            font-size: 14px;
+        }
+
+        img {
+            margin-right: 10px;
+        }
+    }
+
+    .accordion-button{
+        color: #333333;
+        box-shadow: none;
+    }
+
+    .accordion-body {
+        border-top: 1px solid #eee;
+        padding: 10px 20px;
+
+        .accordion-inner {
+            max-height: 220px;
+            overflow: auto;
+            padding-right: 10px;
+
+            p {
+                font-size: 14px;
+                color: #999;
+                font-weight: 300;
+                line-height: 1.6;
+            }
+
+            @include respond-to(max-medium) {
+                max-height: 160px;
+            }
+        }
+
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #95e1d3;
+    border-radius: 10px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #fff;
+}
+
+.accordion-button::after {
+    // background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    // transform: scale(0.75) !important;
+    filter: grayscale(100%);
+  }
+  .accordion-button:not(.collapsed)::after {
+    // background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+  }
+  
+
+  button{
+    &:focus{
+        box-shadow: none !important;
+    }
+}

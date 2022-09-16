@@ -1,0 +1,100 @@
+<div class="load" *ngIf=isLoading>
+    <div class="load-one"></div>
+    <div class="load-two"></div>
+    <div class="load-three"></div>
+</div>
+<app-banner></app-banner>
+<section class="contact-us pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="contact-us_info">
+
+                    <!-- <div>
+                        <button type="button" (click)="toggle()">Toggle Open/Close</button>
+                        <div [@openClose]="isOpen ? 'open' : 'closed'">
+                            <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button (click)="openPlease()">click</button>
+                        <div [@fade]="ab ? 'a' : 'b'">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, esse.</p>
+                        </div>
+                    </div> -->
+
+                    <div class="contact-us_info-each">
+                        <div class="contact-us_info-each-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-us_info-each-title">
+                            <p>info@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-us_info-each">
+                        <div class="contact-us_info-each-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="contact-us_info-each-title">
+                            <p>+874654521</p>
+                        </div>
+                    </div>
+                    <div class="contact-us_info-each">
+                        <div class="contact-us_info-each-icon">
+                            <i class="fas fa-fax"></i>
+                        </div>
+                        <div class="contact-us_info-each-title">
+                            <p>+587-45421</p>
+                        </div>
+                    </div>
+                    <div class="contact-us_info-each">
+                        <div class="contact-us_info-each-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-us_info-each-title">
+                            <p>014578787878</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="contact-us_form">
+                    <div class="contact-us_form-title">
+                        <h2>Send Message</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis necessitatibus amet
+                            facere
+                            quos labore sunt molestias natus voluptatem quaerat veritatis.</p>
+                    </div>
+                    <form [formGroup]="contactForm">
+                        <div class="mb-3">
+                            <label class="form-label">Your Name</label>
+                            <input type="text" class="form-control" formControlName="name" appForbiddenName="bob">
+                            <span *ngIf="name.invalid && name.touched" class="text-danger">Name is required</span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email address</label>
+                            <input type="email" class="form-control" formControlName="email">
+                            <span *ngIf="email.invalid && email.touched" class="text-danger">Email is required</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Phone</label>
+                            <input type="text" formControlName="phone" class="form-control">
+                            <span *ngIf="phone.invalid && phone.touched" class="text-danger">Phone Number is
+                                required</span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Your Message</label>
+                            <textarea class="form-control" formControlName="message"></textarea>
+                            <span *ngIf="message.invalid && message.touched" class="text-danger">Message is
+                                required</span>
+                        </div>
+                        <button type="button" (click)="submitContactForm()"
+                            [disabled]="contactForm.invalid">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

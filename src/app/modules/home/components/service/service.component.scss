@@ -1,0 +1,47 @@
+@use 'variables' as abstract;
+@use 'mixins' as *;
+.service-area{
+    .bar{
+        width: 100%;
+        height: 1px;
+        background-color: #eaeaea;
+        @include respond-to(max-medium){
+            display: none;
+        }
+    }
+    .single-service{
+        display: flex;
+        .img-wrap{
+            width: 30px;
+            height: 30px;
+            margin-right: 16px;
+            img{
+                width: 100%;
+            }
+        }
+        @include respond-to(small){
+            .img-wrap{
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .content{
+            h3{
+                font-size: 18px;
+                font-weight: 500;
+                color: #555555;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 14px;
+                color: #949494;
+            }
+            @include respond-to(max-small){
+                h3{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

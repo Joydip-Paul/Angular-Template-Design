@@ -1,0 +1,86 @@
+@use 'variables' as abstract;
+@use 'mixins' as *;
+
+.contact-us {
+    margin-bottom: 100px;
+    &_info {
+        margin-bottom: 1rem;
+
+        &-each {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            // padding: 18px;
+            @include padding(18, 18, 18, 18);
+            box-shadow: #959da533 0px 8px 24px;
+            margin-bottom: 1.2rem;
+
+            &-icon {
+                background-color: #f3818182;
+                color: #c42e2e;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 16px;
+
+                i {
+                    font-size: 16px;
+                }
+            }
+
+            &-title {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &_form {
+        background-color: #fff;
+        padding: 30px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+        span {
+            font-size: 12px;
+            color: #ac2121;
+        }
+
+        button {
+            @include main-btn;
+            margin-top: .5rem;
+            width: 100%;
+
+            &:disabled {
+                background-color: #CECECE;
+            }
+        }
+
+        label {
+            font-size: 14px;
+            color: #929292;
+        }
+
+        &-title {
+            margin-bottom: 1rem;
+
+            h2 {
+                font-size: 20px;
+                color: #333333;
+                margin-bottom: 16px;
+            }
+
+            p {
+                font-size: 14px;
+                color: #7a7a7a;
+                max-width: 80%;
+            }
+        }
+    }
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}

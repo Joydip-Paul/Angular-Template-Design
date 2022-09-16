@@ -1,0 +1,54 @@
+<section class="pt-100 pb-70">
+  <div class="container">
+    <h1>Contact</h1>
+    <div class="pt-5">
+      <div class="row justify-content-sm-center pt-5">
+        <div class="col-lg-6 shadow round pb-3">
+          <h2 class="text-center pt-3 text-secondary">Form</h2>
+          <form [formGroup]="exform">
+            <div class="form-group">
+              <label class="col-form-label">Name:</label>
+              <input formControlName="name" type="text" class="form-control">
+              <small *ngIf="name.invalid && name.touched" class="text-danger">Name is Required</small>
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Email:</label>
+              <input formControlName="email" type="text" class="form-control">
+              <small *ngIf="email.invalid && email.touched" class="text-danger">Email is Required</small>
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Phone:</label>
+              <input formControlName="phone" type="text" class="form-control">
+              <small *ngIf="phone.invalid && phone.touched" class="text-danger">Phone no is Required(minimum length
+                10,numbers are only allowed)</small>
+            </div>
+            <div class="form-group">
+              <label class="col-form-label">Message:</label>
+              <textarea formControlName="message" class="form-control"></textarea>
+              <small *ngIf="message.invalid && message.touched" class="text-danger"> Message is Required(minimum length
+                10)</small>
+            </div>
+            <button (click)="clicksub()" [disabled]="exform.invalid" type="button" class="btn btn-primary mt-4">Send
+              message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-100">
+      <div class="col-md-6 mx-auto">
+        <ul *ngFor="let person of people">
+          <li *ngIf="person.country ==='UK'" class="text-success">{{ person.name }} ({{ person.country }})
+          </li>
+          <li *ngIf="person.country === 'USA'" class="text-primary">{{ person.name }} ({{ person.country }})
+          </li>
+          <li *ngIf="person.country === 'HK'" class="text-danger">{{ person.name }} ({{ person.country }})
+          </li>
+          <li *ngIf="person.country !== 'HK' && person.country !== 'UK' && person.country !== 'USA'"
+            class="text-black">{{ person.name }} ({{ person.country }})
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

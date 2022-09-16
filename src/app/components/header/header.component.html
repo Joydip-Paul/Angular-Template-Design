@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg" (scroll)="onscroll()" [ngClass]="navbarFixed? 'fixed':'fixed-top'">
+    <div class="container">
+        <a class="navbar-brand" href="#">MoGo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="collapse navbar-collapse tata" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item" (click)="hideNavBar()">
+                    <a class="nav-link active" aria-current="page" href="#about"
+                        routerLinkActive="active-list">ABOUT</a>
+                </li>
+                <li class="nav-item" (click)="hideNavBar()">
+                    <a class="nav-link active" aria-current="page" href="#service"
+                        routerLinkActive="active-list">SERVICE</a>
+                </li>
+                <li class="nav-item" (click)="hideNavBar()">
+                    <a class="nav-link active" aria-current="page" href="#work">WORK</a>
+                </li>
+                <!-- <li class="nav-item" (click)="hideNavBar()">
+                    <a class="nav-link active" aria-current="page" href="#blog">BLOG</a>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        BLOG
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li (click)="hideNavBar()">
+                            <a class="dropdown-item" aria-current="page" href="#blog">SINGLE BLOG</a>
+                        </li>
+                        <li (click)="hideNavBar()" routerLink = "/blog-details">
+                            <a class="dropdown-item">BLOG DETAILS</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" (click)="hideNavBar()">
+                    <a class="nav-link active" aria-current="page" routerLink="/contact">CONTACT</a>
+                </li>
+            </ul>
+            <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li (click)="setLang('ua')"><a>En</a></li>
+                <li (click)="setLang('en')"><a>Bn</a></li>
+            </ul> -->
+        </div>
+    </div>
+</nav>

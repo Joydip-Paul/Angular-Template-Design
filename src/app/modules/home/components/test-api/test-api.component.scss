@@ -1,0 +1,27 @@
+.dashboard-section{
+    display: flex;
+    .sidenav{
+        background-color: rebeccapurple;
+        width: 300px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999999;
+        flex: 0 0  auto;
+        ul{
+            margin-left: 100px;
+            li{
+                color: #000;
+            }
+        }
+    }
+    &_body{
+        width: 100%;
+    }
+}
+
+button{
+    margin-left: 500px;
+    display: block;
+}

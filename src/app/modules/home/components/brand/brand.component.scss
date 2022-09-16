@@ -1,0 +1,38 @@
+@use 'variables' as abstract;
+@use 'mixins' as *;
+.our-partner {
+    background-color: #eee;
+    .brand-area {
+        .brand-img{
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            img{
+                width: 100%;
+                opacity: 0.8;
+                transition: .3s;
+            }
+            &:hover{
+                cursor: ew-resize;
+                img{
+                    opacity: 1;
+                }
+            }
+            @include respond-to(max-small) {
+                height: 100px;
+                width: 100px;
+            }
+        }
+    }
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    color: #FFF;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #D6D6D6;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+}

@@ -1,0 +1,39 @@
+.team-area {
+    .social {
+        background-color: #f38181;
+        background-color: #e3cd6d;
+        display: flex;
+
+        div {
+            padding: 8px;
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+
+        a {
+            margin: 0 4px;
+            color: #c45252;
+            font-size: 20px;
+        }
+    }
+
+    .team-info {
+        text-align: center;
+        padding-top: 20px;
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-style: italic;
+        }
+    }
+}

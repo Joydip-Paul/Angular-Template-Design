@@ -1,0 +1,216 @@
+<section class="banner">
+    <div class="banner_details">
+        <h1>{{bannerTitle}}</h1>
+        <div class="banner_details-path">
+            <a routerLink = {{path1}}>{{path1Name}}</a>
+            <span> / </span>
+            <a>{{bannerTitle}}</a>
+        </div>
+    </div>
+</section>
+<section class="gallery-section pt-100 pb-70">
+    <div class="container">
+        <div class="tab-area">
+            <ul>
+                <li id="blogs" [class.tabActive]="id === 'blogs'" (click)="tabChange('blogs')">Events</li>
+                <li id="instagram" [class.tabActive]="id === 'instagram'" (click)="tabChange('instagram')">Instagram
+                </li>
+                <li id="story" [class.tabActive]="id === 'story'" (click)="tabChange('story')">Story</li>
+            </ul>
+            <!-- <div class="tab-area_tab-content" *ngIf="id === 'blogs'">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae architecto odio fugiat ullam quasi eum
+                    beatae enim dolores laborum nihil.</p>
+            </div> -->
+            <!-- <div class="tab-area_tab-content" *ngIf="id === 'instagram'">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae architecto odio fugiat ullam quasi eum
+                    beatae enim dolores laborum nihil.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, molestiae excepturi cum nobis alias,
+                    placeat quidem eligendi blanditiis at mollitia aperiam temporibus natus. Neque provident
+                    exercitationem quidem quia nisi sunt.</p>
+            </div> -->
+            <div class="tab-area_tab-content mt-5" *ngIf="id === 'story'">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae architecto odio fugiat ullam quasi eum
+                    beatae enim dolores laborum nihil.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vero nesciunt nemo obcaecati
+                    aspernatur expedita nostrum error quidem perferendis sequi.</p>
+            </div>
+        </div>
+
+        <div class="slider" *ngIf="id === 'blogs'">
+            <div class="title-area pt-100">
+                <h2>Our Last Events</h2>
+            </div>
+            <swiper [config]="blogGallerySwiper">
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/blog/blog-1.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/blog/blog-2.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/blog/blog-3.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/blog/blog-4.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/blog/blog-5.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/blog/blog-6.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/blog/blog-2.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/blog/blog-1.jpg" alt="">
+                    </div>
+                </ng-template>
+            </swiper>
+            <div class="gallery-slider-nav">
+                <button class="gallery-slider-nav_control-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="gallery-slider-nav_control-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <div class="insta-slider" *ngIf="id === 'instagram'">
+            <div class="title-area pt-100">
+                <h2>Our Instagram</h2>
+            </div>
+            <swiper [config]="instagramSwiper" class="instagram-swiper">
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/instagram/instagram-1.jpg" alt="">
+                    </div>
+                    <div class="slide-img pt-4">
+                        <img src="assets/images/instagram/instagram-4.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/instagram/instagram-2.jpg" alt="">
+                    </div>
+                    <div class="slide-img pt-4">
+                        <img src="assets/images/instagram/instagram-1.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/instagram/instagram-3.jpg" alt="">
+                    </div>
+                    <div class="slide-img pt-4">
+                        <img src="assets/images/instagram/instagram-2.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/instagram/instagram-4.jpg" alt="">
+                    </div>
+                    <div class="slide-img pt-4">
+                        <img src="assets/images/instagram/instagram-5.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/instagram/instagram-5.jpg" alt="">
+                    </div>
+                    <div class="slide-img pt-4">
+                        <img src="assets/images/instagram/instagram-6.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/instagram/instagram-6.jpg" alt="">
+                    </div>
+                    <div class="slide-img pt-4">
+                        <img src="assets/images/instagram/instagram-1.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/instagram/instagram-7.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/instagram/instagram-8.jpg" alt="">
+                    </div>
+                </ng-template>
+            </swiper>
+            <div class="instagram-slider-nav">
+                <button class="instagram-slider-nav_control-btn insta-next-btn"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="instagram-slider-nav_control-btn insta-prev-btn"><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <div class="story-slider" *ngIf="id === 'story'">
+            <div class="title-area pt-100">
+                <h2>Our Story</h2>
+            </div>
+            <swiper [config]="storySwiper" class="story-swiper">
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/masonery/masonery-2.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/masonery/masonery-3.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/masonery/masonery-4.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/masonery/masonery-7.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/masonery/masonery-6.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/masonery/masonery-7.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/masonery/masonery-1.jpg" alt="">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="slide-img">
+                        <img src="assets/images/masonery/masonery-4.jpg" alt="">
+                    </div>
+                </ng-template>
+            </swiper>
+            <div class="story-slider-nav">
+                <button class="story-slider-nav_control-btn story-next-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="story-slider-nav_control-btn story-prev-btn"><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+</section>

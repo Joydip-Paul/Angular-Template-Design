@@ -1,0 +1,117 @@
+@use 'variables' as abstract;
+@use 'mixins' as *;
+.blog-area {
+    .single-blog {
+        .blog-img {
+            position: relative;
+            // overflow: hidden;
+
+            .img-frame{
+                overflow: hidden;
+                margin-bottom: 16px;
+                img {
+                    width: 100%;
+                    transition: .5s;
+                    &:hover {
+                        transform: rotate(-6deg) scale(1.2);
+                    }
+                }
+            }
+
+            .date {
+                position: absolute;
+                background-color: #95e1d3;
+                padding: 10px 20px;
+                color: #fff;
+                bottom: 10px;
+                left: -10px;
+                transition: .3s;
+
+                h2 {
+                    font-size: 26px;
+                    font-weight: 700;
+                    line-height: 16px;
+                    padding-top: 10px;
+                }
+
+                h5 {
+                    font-size: 14px;
+                }
+                @include respond-to(max-small){
+                    padding: 6px 12px;
+                    h2{
+                        font-size: 20px;
+                    }
+                }
+            }
+            &:hover{
+                .date{
+                    background-color: #369583;
+                }
+            }
+        }
+
+        ul {
+            display: flex;
+            padding-bottom: 0;
+
+            li {
+                margin-right: 10px;
+                font-size: 14px;
+                color: #95e1d3;
+                font-style: italic;
+
+                i {
+                    margin-right: 4px;
+                }
+                &:hover{
+                    color: #369583;
+                }
+            }
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+    }
+    .view-more{
+        text-align: center;
+        margin-top: 20px;
+        a{
+            border: 2px solid #95e1d3;
+            padding: 12px 48px;
+            color: #56bba9;
+            position: relative;
+            @include respond-to(max-small){
+                padding: 8px 24px;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background-color: #56bba9;
+                height: 0;
+                width: 0;
+                transition: .3s;
+                z-index: -1;
+            }
+            &:hover::before{
+                width: 100%;
+                height: 100%;
+            }
+            &:hover{
+                color: #fff;
+                z-index: 1;
+            }
+        }
+    }
+}
